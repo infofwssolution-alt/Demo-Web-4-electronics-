@@ -3,628 +3,657 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nexora Home & Tech | Premium Consumer Electronics & Smart Living</title>
-  <meta name="description" content="Discover premium audio, smart kitchen appliances, intelligent cleaning, and connected home gadgets with guaranteed warranty and 30-day returns at Nexora.">
+  <title>Ponno - Modern Electronics &amp; High-Tech Store</title>
+  <meta name="description" content="Discover premium electronics, curved displays, studio audio, smart home devices, and ultra laptops at Ponno.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- 1. Announcement Bar -->
-  <aside class="announcement-bar" aria-label="Store Announcements">
-    <div class="announcement-content">
-      <div class="announcement-perks">
-        <div class="perk-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-          <span>Free Standard Delivery over $75</span>
-        </div>
-        <div class="perk-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-          <span>30-Day Hassle-Free Returns</span>
-        </div>
-        <div class="perk-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <span>1–2 Year Manufacturer Warranty</span>
-        </div>
-      </div>
-      <div class="announcement-help">
-        <span>Support: <strong>support@nexora.example</strong> (Mon–Sat 9am–6pm EST)</span>
-      </div>
-    </div>
-  </aside>
-
-  <!-- 2. Site Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <!-- Brand Logo -->
-      <a href="#hero" class="brand-logo" id="logoLink" aria-label="Nexora Home & Tech Home">
-        <div class="logo-icon-svg">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-            <polyline points="2 17 12 22 22 17"></polyline>
-            <polyline points="2 12 12 17 22 12"></polyline>
-          </svg>
-        </div>
-        <div class="brand-text-wrap">
-          <span class="brand-name">Nexora</span>
-          <span class="brand-tagline">Home &amp; Tech</span>
-        </div>
-      </a>
-
-      <!-- Live Search Box -->
-      <div class="header-search">
-        <div class="search-input-wrap">
-          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input type="text" id="searchInput" class="search-input" placeholder="Search earbuds, air fryers, vacuums, webcams..." aria-label="Search products live">
-          <button id="searchClearBtn" class="search-clear-btn" aria-label="Clear search query" title="Clear">✕</button>
-        </div>
-      </div>
-
-      <!-- Navigation Links -->
-      <nav class="header-nav" aria-label="Main Navigation">
-        <a href="#catalog" class="nav-link" data-filter-nav="audio">Audio</a>
-        <a href="#catalog" class="nav-link" data-filter-nav="kitchen">Kitchen</a>
-        <a href="#catalog" class="nav-link" data-filter-nav="home">Home &amp; Cleaning</a>
-        <a href="#catalog" class="nav-link" data-filter-nav="smart">Smart Gadgets</a>
-        <a href="#support" class="nav-link">Support</a>
+  <!-- =========================================================================
+       1. TOP ROYAL BLUE NAVIGATION BAR (Screenshot 1)
+       ========================================================================= -->
+  <header class="top-nav-bar" id="topNav">
+    <div class="container top-nav-inner">
+      <nav class="nav-links-wrap" aria-label="Main Navigation">
+        <a href="#hero" class="nav-item">
+          <span>Home</span>
+          <span class="nav-caret">&#9662;</span>
+        </a>
+        <a href="#catalog" class="nav-item">
+          <span>Shop</span>
+          <span class="nav-caret">&#9662;</span>
+        </a>
+        <a href="#compactCatalog" class="nav-item">
+          <span>Products</span>
+          <span class="nav-caret">&#9662;</span>
+        </a>
+        <a href="#recentPosts" class="nav-item">
+          <span>Blog</span>
+          <span class="nav-caret">&#9662;</span>
+        </a>
+        <a href="#contactInfo" class="nav-item">
+          <span>Contact</span>
+        </a>
+        <a href="#about" class="nav-item">
+          <span>About Us</span>
+        </a>
       </nav>
 
-      <!-- Cart Button with Counter -->
-      <button class="header-cart-btn" id="openCartBtn" aria-label="View Shopping Cart">
-        <svg class="cart-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-        <span>Cart</span>
-        <span class="cart-badge" id="cartCountBadge">0</span>
-      </button>
+      <!-- Nav Actions (Settings Gear & Cart) -->
+      <div class="nav-actions-wrap">
+        <button class="nav-icon-btn" id="openSettingsBtn" aria-label="Settings" title="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+
+        <button class="nav-icon-btn" id="openCartBtn" aria-label="Shopping Cart" title="View Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="nav-cart-badge" id="cartCountBadge">0</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-    <!-- 3. Hero Section -->
-    <section class="hero-section" id="hero">
+    <!-- =========================================================================
+         2. HERO SLIDER SECTION (Screenshot 1: Mount Carved 2200XD)
+         ========================================================================= -->
+    <section class="hero-slider-section" id="hero">
+      <div class="hero-bg-shapes" aria-hidden="true">
+        <div class="hero-shape-left"></div>
+        <div class="hero-shape-center"></div>
+        <div class="hero-shape-right"></div>
+      </div>
+
       <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge-pill">
-            <span>Special Spring Savings</span>
-          </div>
-          <h1 class="hero-title">
-            Smarter Living, <br>
-            <span class="accent-text">Engineered for Everyday Comfort.</span>
-          </h1>
-          <p class="hero-desc">
-            Explore curated consumer audio, intelligent kitchen appliances, robotic floor care, and smart home accessories designed with authentic performance and backed by up to 2 years of warranty.
+        <!-- Left: Ultra-Wide Curved Monitor -->
+        <div class="hero-visual-col">
+          <img src="images/hero-monitor.jpg" alt="Mount Carved 2200XD Curved Gaming Monitor" class="hero-monitor-img" onclick="openProductModal('prod-monitor-01')">
+        </div>
+
+        <!-- Right: Best Products Details -->
+        <div class="hero-content-col">
+          <span class="hero-eyebrow">Best Products</span>
+          <h1 class="hero-product-title">Mount Carved 2200XD</h1>
+          <p class="hero-description">
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
           </p>
-          <div class="hero-actions">
-            <a href="#catalog" class="btn-primary" id="shopDealsBtn">
-              <span>Shop Featured Deals</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
-            <a href="#categories" class="btn-secondary">
-              <span>Explore Categories</span>
-            </a>
-          </div>
+          <button class="btn-hero-primary" onclick="openProductModal('prod-monitor-01')">
+            Shop Now
+          </button>
         </div>
+      </div>
 
-        <!-- Featured Deal Spotlight Card -->
-        <div class="featured-deal-card">
-          <span class="deal-card-badge">Save $20 Today</span>
-          <div class="deal-visual">
-            <svg class="product-illustration" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-              <defs>
-                <linearGradient id="heroAfGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#334155"/>
-                  <stop offset="100%" stop-color="#0F1B33"/>
-                </linearGradient>
-              </defs>
-              <circle cx="100" cy="100" r="90" fill="rgba(255,255,255,0.08)" />
-              <rect x="55" y="45" width="90" height="110" rx="24" fill="url(#heroAfGrad)" stroke="#64748B" stroke-width="2"/>
-              <rect x="68" y="58" width="64" height="26" rx="8" fill="#020617" stroke="#2F6BFF" stroke-width="1.5"/>
-              <text x="100" y="75" font-family="monospace" font-size="12" fill="#38BDF8" text-anchor="middle" font-weight="bold">190°C</text>
-              <rect x="63" y="94" width="74" height="52" rx="12" fill="#090E1A" stroke="#475569" stroke-width="1.5"/>
-              <rect x="94" y="104" width="12" height="32" rx="6" fill="#2F6BFF"/>
-              <line x1="68" y1="90" x2="132" y2="90" stroke="#FF6B35" stroke-width="2"/>
-            </svg>
-          </div>
-          <div class="deal-info">
-            <span class="deal-tag">Kitchen Highlight • 2-Year Warranty</span>
-            <h3 class="deal-name">Crisp 5L Air Fryer</h3>
-            <div class="deal-price-row">
-              <span class="deal-current-price">$99</span>
-              <span class="deal-original-price">$119</span>
-              <span class="deal-save-chip">17% OFF</span>
+      <!-- Pagination Dots -->
+      <div class="hero-pagination-dots" aria-label="Slide Navigation">
+        <span class="slider-dot active" title="Slide 1"></span>
+        <span class="slider-dot" title="Slide 2"></span>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. SECOND ROW: HOT DEAL & SIDE PRODUCT (Screenshot 1)
+         ========================================================================= -->
+    <section class="hot-deal-section">
+      <div class="container hot-deal-grid">
+        <!-- Left Card: Kemioo DX24 Headphone with Live Countdown -->
+        <div class="hot-deal-card">
+          <div class="hot-deal-info">
+            <span class="hot-deal-tag">HOT DEAL</span>
+            <h2 class="hot-deal-title">Kemioo DX24 Headphone</h2>
+            <p class="hot-deal-desc">
+              Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.
+            </p>
+
+            <!-- Live Countdown Timer -->
+            <div class="countdown-strip" id="hotDealCountdown" aria-label="Limited time deal countdown">
+              <div class="countdown-block">
+                <span class="countdown-val" id="cdDays">1723</span>
+                <span class="countdown-unit">Days</span>
+              </div>
+              <div class="countdown-block">
+                <span class="countdown-val" id="cdHours">08</span>
+                <span class="countdown-unit">Hrs</span>
+              </div>
+              <div class="countdown-block">
+                <span class="countdown-val" id="cdMins">59</span>
+                <span class="countdown-unit">Min</span>
+              </div>
+              <div class="countdown-block">
+                <span class="countdown-val" id="cdSecs">50</span>
+                <span class="countdown-unit">Secs</span>
+              </div>
             </div>
-            <button class="btn-deal-view" onclick="openProductModal('prod-kitchen-02')">
-              View Deal Details
-            </button>
+          </div>
+
+          <div class="hot-deal-visual">
+            <img src="images/deal-headphones.jpg" alt="Kemioo DX24 Headphone" class="hot-deal-img" onclick="openProductModal('prod-hotdeal-01')">
+          </div>
+        </div>
+
+        <!-- Right Card: Aliquam Consequat Mattis (Headphones on Dock) -->
+        <div class="side-product-card" id="sideCardMattis">
+          <button class="wishlist-heart-btn" aria-label="Add to wishlist" onclick="toggleWishlist(this)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+          <div class="side-product-thumb" onclick="openProductModal('prod-headphone-cradle')">
+            <img src="images/prod-headphones-dock.jpg" alt="Aliquam Consequat Mattis Headphones on Dock">
+          </div>
+          <h3 class="side-product-name" onclick="openProductModal('prod-headphone-cradle')">Aliquam Consequat Mattis</h3>
+          <span class="side-product-price">$150.00</span>
+          <div class="star-rating-row" aria-label="0 out of 5 stars">
+            <span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Trust Badges Strip -->
-    <section class="trust-strip" aria-label="Store Guarantees">
-      <div class="container trust-grid">
-        <div class="trust-item">
-          <div class="trust-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-          </div>
-          <div class="trust-text-box">
-            <h4>Free Express Shipping</h4>
-            <p>On all qualifying orders over $75</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-          </div>
-          <div class="trust-text-box">
-            <h4>30-Day Returns</h4>
-            <p>Full refund on unopened items</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          </div>
-          <div class="trust-text-box">
-            <h4>1–2 Year Warranty</h4>
-            <p>Direct manufacturer protection</p>
-          </div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon-box">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-          </div>
-          <div class="trust-text-box">
-            <h4>AI Support Assistant</h4>
-            <p>Instant help on specs &amp; claims</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. Category Tiles Section -->
-    <section class="categories-section" id="categories">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Shop by Category</h2>
-            <p class="section-subtitle">Browse purpose-built technology crafted for your home and lifestyle.</p>
-          </div>
-        </div>
-        <div class="category-tiles-grid">
-          <!-- Audio Tile -->
-          <div class="category-tile" data-cat-filter="audio" tabindex="0" role="button" aria-label="Filter Audio products">
-            <svg class="tile-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#2F6BFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
-            </svg>
-            <h3 class="tile-title">Audio</h3>
-            <p class="tile-count">3 Products (Earbuds, Headphones, Speaker)</p>
-            <div class="tile-arrow">View Audio &rarr;</div>
-          </div>
-
-          <!-- Kitchen Appliances Tile -->
-          <div class="category-tile" data-cat-filter="kitchen" tabindex="0" role="button" aria-label="Filter Kitchen Appliances">
-            <svg class="tile-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#2F6BFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-              <line x1="6" y1="1" x2="6" y2="4"></line>
-              <line x1="10" y1="1" x2="10" y2="4"></line>
-              <line x1="14" y1="1" x2="14" y2="4"></line>
-            </svg>
-            <h3 class="tile-title">Kitchen Appliances</h3>
-            <p class="tile-count">4 Products (Air Fryer, Blender, Coffee, Kettle)</p>
-            <div class="tile-arrow">View Kitchen &rarr;</div>
-          </div>
-
-          <!-- Home & Cleaning Tile -->
-          <div class="category-tile" data-cat-filter="home" tabindex="0" role="button" aria-label="Filter Home and Cleaning products">
-            <svg class="tile-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#2F6BFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9"></circle>
-              <path d="M12 3v9l5 5"></path>
-              <line x1="8" y1="8" x2="16" y2="16"></line>
-            </svg>
-            <h3 class="tile-title">Home &amp; Cleaning</h3>
-            <p class="tile-count">3 Products (Robot Vacuum, HEPA Purifier, Fan)</p>
-            <div class="tile-arrow">View Home &rarr;</div>
-          </div>
-
-          <!-- Smart Gadgets Tile -->
-          <div class="category-tile" data-cat-filter="smart" tabindex="0" role="button" aria-label="Filter Smart Gadgets">
-            <svg class="tile-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#2F6BFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-              <rect x="9" y="9" width="6" height="6"></rect>
-              <line x1="9" y1="1" x2="9" y2="4"></line>
-              <line x1="15" y1="1" x2="15" y2="4"></line>
-              <line x1="9" y1="20" x2="9" y2="23"></line>
-              <line x1="15" y1="20" x2="15" y2="23"></line>
-              <line x1="20" y1="9" x2="23" y2="9"></line>
-              <line x1="20" y1="14" x2="23" y2="14"></line>
-              <line x1="1" y1="9" x2="4" y2="9"></line>
-              <line x1="1" y1="14" x2="4" y2="14"></line>
-            </svg>
-            <h3 class="tile-title">Smart Gadgets</h3>
-            <p class="tile-count">4 Products (Smart Plugs, Power Bank, Watch, Cam)</p>
-            <div class="tile-arrow">View Gadgets &rarr;</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Product Catalog & Grid Section -->
+    <!-- =========================================================================
+         4. PRODUCT FILTER TABS & 4-COLUMN GRID (Screenshot 2)
+         ========================================================================= -->
     <section class="catalog-section" id="catalog">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Product Catalog</h2>
-            <p class="section-subtitle">Real-time filterable inventory with complete hardware specifications.</p>
-          </div>
+        <!-- Centered Tab Pill Buttons -->
+        <div class="tabs-centered-wrap" role="tablist" aria-label="Product categories">
+          <button class="tab-btn active" data-tab="new" role="tab">New Product</button>
+          <button class="tab-btn" data-tab="featured" role="tab">Featured</button>
+          <button class="tab-btn" data-tab="best-deal" role="tab">Best Deal</button>
         </div>
 
-        <!-- Filter Chips & Sort Controls -->
-        <div class="catalog-controls">
-          <div class="filter-chips" role="tablist" aria-label="Filter products by category">
-            <button class="chip-btn active" data-filter="all" role="tab">All Products (14)</button>
-            <button class="chip-btn" data-filter="audio" role="tab">Audio (3)</button>
-            <button class="chip-btn" data-filter="kitchen" role="tab">Kitchen Appliances (4)</button>
-            <button class="chip-btn" data-filter="home" role="tab">Home &amp; Cleaning (3)</button>
-            <button class="chip-btn" data-filter="smart" role="tab">Smart Gadgets (4)</button>
-            <button class="chip-btn" data-filter="sale" role="tab">On Sale (4)</button>
-          </div>
-
-          <div class="catalog-stats-sort">
-            <span class="products-count-badge" id="productsCountText">Showing 14 products</span>
-            <div class="sort-select-wrap">
-              <label for="sortSelect">Sort:</label>
-              <select id="sortSelect" class="sort-select" aria-label="Sort product catalog">
-                <option value="featured">Featured</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-                <option value="rating">Highest Rated</option>
-                <option value="name-asc">Name: A to Z</option>
-              </select>
+        <!-- 4-Column Product Grid -->
+        <div class="products-4col-grid" id="products4ColGrid">
+          <!-- Item 1: Speaker with Purple Handle + Countdown -->
+          <article class="product-tile-card">
+            <button class="wishlist-heart-btn" aria-label="Add to wishlist" onclick="toggleWishlist(this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+            <div class="tile-countdown-box">
+              <span class="tile-timer-unit" id="p1Days">00</span><span class="tile-timer-lbl">Days</span>
+              <span class="tile-timer-unit" id="p1Hours">00</span><span class="tile-timer-lbl">Hrs</span>
+              <span class="tile-timer-unit" id="p1Mins">00</span><span class="tile-timer-lbl">Min</span>
+              <span class="tile-timer-unit" id="p1Secs">00</span><span class="tile-timer-lbl">Secs</span>
             </div>
-          </div>
-        </div>
+            <div class="tile-thumb-wrap" onclick="openProductModal('prod-speaker-handle')">
+              <img src="images/prod-speaker-purple.jpg" alt="Dummy Product Title Portable Speaker">
+            </div>
+            <h3 class="tile-title" onclick="openProductModal('prod-speaker-handle')">Dummy Product Title</h3>
+            <div class="tile-price-row">
+              <span class="tile-current-price">$120.00</span>
+              <span class="tile-strike-price">$150.00</span>
+            </div>
+            <div class="star-rating-row">
+              <span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span>
+            </div>
+            <div class="tile-quick-actions">
+              <button class="btn-tile-cart" onclick="addToCart('prod-speaker-handle', 1)">Add to Cart</button>
+              <button class="btn-tile-view" onclick="openProductModal('prod-speaker-handle')">View</button>
+            </div>
+          </article>
 
-        <!-- Dynamic Product Cards Grid -->
-        <div class="products-grid" id="productsGrid" aria-live="polite">
-          <!-- Injected dynamically by js/app.js -->
+          <!-- Item 2: Studio Mic -->
+          <article class="product-tile-card">
+            <button class="wishlist-heart-btn" aria-label="Add to wishlist" onclick="toggleWishlist(this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+            <div class="tile-thumb-wrap" onclick="openProductModal('prod-studio-mic')">
+              <img src="images/prod-studio-mic.jpg" alt="Fhasellus Viverra Urna Studio Microphone">
+            </div>
+            <h3 class="tile-title" onclick="openProductModal('prod-studio-mic')">Fhasellus Viverra Urna</h3>
+            <div class="tile-price-row">
+              <span class="tile-current-price">$30.00</span>
+            </div>
+            <div class="star-rating-row">
+              <span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span>
+            </div>
+            <div class="tile-quick-actions">
+              <button class="btn-tile-cart" onclick="addToCart('prod-studio-mic', 1)">Add to Cart</button>
+              <button class="btn-tile-view" onclick="openProductModal('prod-studio-mic')">View</button>
+            </div>
+          </article>
+
+          <!-- Item 3: Streaming Box + Countdown -->
+          <article class="product-tile-card">
+            <button class="wishlist-heart-btn" aria-label="Add to wishlist" onclick="toggleWishlist(this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+            <div class="tile-countdown-box">
+              <span class="tile-timer-unit" id="p3Days">00</span><span class="tile-timer-lbl">Days</span>
+              <span class="tile-timer-unit" id="p3Hours">00</span><span class="tile-timer-lbl">Hrs</span>
+              <span class="tile-timer-unit" id="p3Mins">00</span><span class="tile-timer-lbl">Min</span>
+              <span class="tile-timer-unit" id="p3Secs">00</span><span class="tile-timer-lbl">Secs</span>
+            </div>
+            <div class="tile-thumb-wrap" onclick="openProductModal('prod-stream-box')">
+              <img src="images/prod-stream-box.jpg" alt="Dummy Product Title Streaming Box">
+            </div>
+            <h3 class="tile-title" onclick="openProductModal('prod-stream-box')">Dummy Product Title</h3>
+            <div class="tile-price-row">
+              <span class="tile-current-price">$120.00</span>
+              <span class="tile-strike-price">$150.00</span>
+            </div>
+            <div class="star-rating-row">
+              <span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span>
+            </div>
+            <div class="tile-quick-actions">
+              <button class="btn-tile-cart" onclick="addToCart('prod-stream-box', 1)">Add to Cart</button>
+              <button class="btn-tile-view" onclick="openProductModal('prod-stream-box')">View</button>
+            </div>
+          </article>
+
+          <!-- Item 4: VR Headset in Case -->
+          <article class="product-tile-card">
+            <button class="wishlist-heart-btn" aria-label="Add to wishlist" onclick="toggleWishlist(this)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            </button>
+            <div class="tile-thumb-wrap" onclick="openProductModal('prod-vr-case')">
+              <img src="images/prod-vr-case.jpg" alt="Illo Inventore Veritatis VR Headset Case">
+            </div>
+            <h3 class="tile-title" onclick="openProductModal('prod-vr-case')">Illo Inventore Veritatis</h3>
+            <div class="tile-price-row">
+              <span class="tile-current-price">$90.00</span>
+              <span class="tile-strike-price">$100.00</span>
+            </div>
+            <div class="star-rating-row">
+              <span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span>
+            </div>
+            <div class="tile-quick-actions">
+              <button class="btn-tile-cart" onclick="addToCart('prod-vr-case', 1)">Add to Cart</button>
+              <button class="btn-tile-view" onclick="openProductModal('prod-vr-case')">View</button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- 8. Customer Support Cards Section -->
-    <section class="support-section" id="support">
+    <!-- =========================================================================
+         5. TWO PROMO BANNERS SIDE-BY-SIDE (Screenshot 2)
+         ========================================================================= -->
+    <section class="promo-banners-section">
+      <div class="container promo-banners-grid">
+        <!-- Left Banner: Silver Laptop -->
+        <div class="promo-banner-card">
+          <img src="images/promo-laptop.jpg" alt="Lorem Top LT500 New Collection Laptop" class="promo-banner-img">
+          <div class="promo-banner-overlay"></div>
+          <div class="promo-banner-content">
+            <span class="promo-subtitle">New Collection</span>
+            <h2 class="promo-title">Lorem Top LT500</h2>
+            <a href="#catalog" class="promo-shop-link">SHOP NOW</a>
+          </div>
+        </div>
+
+        <!-- Right Banner: Dark Laptop, Phone & Watch -->
+        <div class="promo-banner-card">
+          <img src="images/promo-dark-tech.jpg" alt="Ipsum Nok IT222 Best Deal" class="promo-banner-img">
+          <div class="promo-banner-overlay"></div>
+          <div class="promo-banner-content">
+            <span class="promo-subtitle">Best Deal</span>
+            <h2 class="promo-title">Ipsum Nok IT222</h2>
+            <a href="#catalog" class="promo-shop-link">SHOP NOW</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. LAPTOPS & COMPUTERS 3x3 COMPACT SECTION (Screenshot 3)
+         ========================================================================= -->
+    <section class="compact-catalog-section" id="compactCatalog">
       <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Customer Care &amp; Support Hub</h2>
-            <p class="section-subtitle">Transparent policies, verified warranty protections, and direct service channels.</p>
+        <div class="compact-section-header">
+          <h2 class="compact-title">Laptops &amp; Computers</h2>
+          <div class="compact-tabs-nav">
+            <span class="compact-tab-link active" data-subtab="featured">Featured</span>
+            <span class="compact-tab-link" data-subtab="new">New Product</span>
+            <span class="compact-tab-link" data-subtab="best-deal">Best Deal</span>
           </div>
         </div>
 
-        <div class="support-cards-grid">
-          <!-- Card 1: Shipping & Delivery -->
-          <div class="support-card">
-            <div class="support-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        <!-- 3x3 Grid of 9 Horizontal Compact Cards -->
+        <div class="compact-3x3-grid" id="compact3x3Grid">
+          <!-- Row 1, Col 1 -->
+          <div class="compact-card">
+            <div class="compact-thumb" onclick="openProductModal('prod-headphone-cradle')">
+              <img src="images/prod-headphones-dock.jpg" alt="Aliquam Consequat Mattis">
             </div>
-            <h4>Shipping &amp; Delivery</h4>
-            <p>Free standard delivery on orders over $75 ($5.99 under $75). Delivers in 3–5 business days. Express (1–2 days) for $12.99. Tracking sent via email.</p>
-            <a href="#faq" class="support-card-link">View Shipping Rules &rarr;</a>
+            <div class="compact-info">
+              <h3 class="compact-name" onclick="openProductModal('prod-headphone-cradle')">Aliquam Consequat Mattis</h3>
+              <div class="compact-price-wrap">
+                <span class="compact-price">$150.00</span>
+              </div>
+              <div class="star-rating-row"><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></div>
+            </div>
           </div>
 
-          <!-- Card 2: Returns & Refunds -->
-          <div class="support-card">
-            <div class="support-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+          <!-- Row 1, Col 2 -->
+          <div class="compact-card">
+            <div class="compact-thumb" onclick="openProductModal('prod-earbud-single')">
+              <img src="images/deal-headphones.jpg" alt="Dummy Product Name">
             </div>
-            <h4>Returns &amp; Refunds</h4>
-            <p>30 days for unopened boxes. Opened electronics returnable within 14 days (15% restocking fee). Defective items replaced or refunded 100% free within 30 days.</p>
-            <a href="#faq" class="support-card-link">Return Guidelines &rarr;</a>
+            <div class="compact-info">
+              <h3 class="compact-name" onclick="openProductModal('prod-earbud-single')">Dummy Product Name</h3>
+              <div class="compact-price-wrap">
+                <span class="compact-price">$60.00</span>
+              </div>
+              <div class="star-rating-row"><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></div>
+            </div>
           </div>
 
-          <!-- Card 3: Warranty & Repairs -->
-          <div class="support-card">
-            <div class="support-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <!-- Row 1, Col 3 -->
+          <div class="compact-card">
+            <div class="compact-thumb" onclick="openProductModal('prod-stream-box')">
+              <img src="images/prod-stream-box.jpg" alt="Dummy Product Title">
             </div>
-            <h4>Warranty &amp; Repairs</h4>
-            <p>2-year warranty on major home &amp; kitchen appliances; 1-year warranty on audio and smart gadgets. Covers hardware and manufacturing defects.</p>
-            <a href="#faq" class="support-card-link">Warranty Details &rarr;</a>
+            <div class="compact-info">
+              <h3 class="compact-name" onclick="openProductModal('prod-stream-box')">Dummy Product Title</h3>
+              <div class="compact-price-wrap">
+                <span class="compact-price">$120.00</span>
+                <span class="compact-original">$150.00</span>
+              </div>
+              <div class="star-rating-row"><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></div>
+            </div>
           </div>
 
-          <!-- Card 4: Troubleshooting -->
-          <div class="support-card">
-            <div class="support-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <!-- Row 2, Col 1 -->
+          <div class="compact-card">
+            <div class="compact-thumb" onclick="openProductModal('prod-tripod-cam')">
+              <img src="images/prod-studio-mic.jpg" alt="Cras Neque Metus">
             </div>
-            <h4>Troubleshooting Hub</h4>
-            <p>Step-by-step resolution guides for Bluetooth earbuds pairing, speaker charging resets, air fryer basket safety interlocks, and vacuum Wi-Fi setup.</p>
-            <a href="#faq" class="support-card-link">Quick Fix Guides &rarr;</a>
+            <div class="compact-info">
+              <h3 class="compact-name" onclick="openProductModal('prod-tripod-cam')">Cras Neque Metus</h3>
+              <div class="compact-price-wrap">
+                <span class="compact-price">$30.00</span>
+              </div>
+              <div class="star-rating-row"><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></div>
+            </div>
           </div>
 
-          <!-- Card 5: Contact Us -->
-          <div class="support-card">
-            <div class="support-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <!-- Row 2, Col 2: Consequences Roin Lectus (Filled Blue Stars as in Screenshot 3!) -->
+          <div class="compact-card">
+            <div class="compact-thumb" onclick="openProductModal('prod-overear-studio')">
+              <img src="images/prod-headphones-dock.jpg" alt="Consequences Roin Lectus">
             </div>
-            <h4>Contact Support</h4>
-            <p>Email our customer care team at <strong>support@nexora.example</strong>. Available Mon–Sat 9:00 AM – 6:00 PM EST. Or use our AI Assistant anytime.</p>
-            <a href="#faq" class="support-card-link">Email Us &rarr;</a>
+            <div class="compact-info">
+              <h3 class="compact-name" onclick="openProductModal('prod-overear-studio')">Consequences Roin Lectus</h3>
+              <div class="compact-price-wrap">
+                <span class="compact-price">$150.00</span>
+              </div>
+              <div class="star-rating-row stars-blue" aria-label="5 out of 5 stars">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2, Col 3 -->
+          <div class="compact-card">
+            <div class="compact-thumb" onclick="openProductModal('prod-security-dome')">
+              <img src="images/prod-security-cam.jpg" alt="Accusantium Doloremque">
+            </div>
+            <div class="compact-info">
+              <h3 class="compact-name" onclick="openProductModal('prod-security-dome')">Accusantium Doloremque</h3>
+              <div class="compact-price-wrap">
+                <span class="compact-price">$130.00</span>
+                <span class="compact-original">$150.00</span>
+              </div>
+              <div class="star-rating-row"><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></div>
+            </div>
+          </div>
+
+          <!-- Row 3, Col 1 -->
+          <div class="compact-card">
+            <div class="compact-thumb" onclick="openProductModal('prod-webcam-clip')">
+              <img src="images/promo-laptop.jpg" alt="Donec Ac Tempus Nrb">
+            </div>
+            <div class="compact-info">
+              <h3 class="compact-name" onclick="openProductModal('prod-webcam-clip')">Donec Ac Tempus Nrb</h3>
+              <div class="compact-price-wrap">
+                <span class="compact-price">$50.00</span>
+              </div>
+              <div class="star-rating-row"><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></div>
+            </div>
+          </div>
+
+          <!-- Row 3, Col 2 -->
+          <div class="compact-card">
+            <div class="compact-thumb" onclick="openProductModal('prod-leather-bag')">
+              <img src="images/prod-vr-case.jpg" alt="Carry Bag Of Leather">
+            </div>
+            <div class="compact-info">
+              <h3 class="compact-name" onclick="openProductModal('prod-leather-bag')">Carry Bag Of Leather</h3>
+              <div class="compact-price-wrap">
+                <span class="compact-price">$80.00</span>
+                <span class="compact-original">$100.00</span>
+              </div>
+              <div class="star-rating-row"><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></div>
+            </div>
+          </div>
+
+          <!-- Row 3, Col 3 -->
+          <div class="compact-card">
+            <div class="compact-thumb" onclick="openProductModal('prod-cylinder-speaker')">
+              <img src="images/prod-speaker-purple.jpg" alt="Dummy Product Name">
+            </div>
+            <div class="compact-info">
+              <h3 class="compact-name" onclick="openProductModal('prod-cylinder-speaker')">Dummy Product Name</h3>
+              <div class="compact-price-wrap">
+                <span class="compact-price">$56.20</span>
+              </div>
+              <div class="star-rating-row"><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span><span>&#9734;</span></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 9. FAQ Accordion Section (Exact match with knowledge base) -->
-    <section class="faq-section" id="faq">
+    <!-- =========================================================================
+         7. WIDE SMARTPHONE BANNER (Screenshot 3: White uPhone XI)
+         ========================================================================= -->
+    <section class="wide-phone-banner-section">
       <div class="container">
-        <div class="faq-header-wrap">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-subtitle">Direct, verified answers matching our customer knowledge base and assistant records.</p>
-        </div>
-
-        <div class="faq-accordion-wrap" id="faqAccordion">
-          <!-- Q1 -->
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span>How does free delivery work and what are the delivery timeframes?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer-panel">
-              <div class="faq-answer-content">
-                <p>Nexora offers free standard delivery on all domestic orders totaling $75 or more before taxes. For orders under $75, standard delivery is a flat fee of $5.99. Standard shipping takes 3 to 5 business days. Express 1–2 business day delivery is available at checkout for $12.99. The daily order cut-off time for same-day warehouse dispatch is 2:00 PM EST (Monday through Friday). Once your order ships, carrier tracking details arrive directly by email.</p>
-              </div>
-            </div>
+        <div class="wide-phone-banner">
+          <div class="wide-phone-content">
+            <h2 class="wide-phone-title">White uPhone XI Multicolor.</h2>
+            <p class="wide-phone-desc">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            </p>
+            <a href="#catalog" class="btn-phone-shop">Shop Now</a>
           </div>
-
-          <!-- Q2 -->
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span>What is your return policy for opened items versus unopened items?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer-panel">
-              <div class="faq-answer-content">
-                <p>We provide a 30-day return window from delivery for unopened, brand new items in original factory packaging for a full 100% refund. Opened electronics in good working condition may be returned within 14 days of delivery, subject to a 15% restocking fee to cover testing and repackaging. Defective items can be returned within 30 days for a full refund or free replacement with zero fees. Please note: opened or used in-ear earbuds and headphones cannot be returned due to hygiene health regulations unless arriving defective.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Q3 -->
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span>Which products have a 2-year warranty versus a 1-year warranty?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer-panel">
-              <div class="faq-answer-content">
-                <p>Major appliances receive an extended 2-year manufacturer warranty: Whirl 1.5L Blender, Crisp 5L Air Fryer, Glide Robot Vacuum, and PureAir Mini Air Purifier. All other devices receive a 1-year warranty: Pulse Wireless Earbuds, Studio Over-Ear Headphones, Boom Mini Bluetooth Speaker, Brew Plus Coffee Maker, Swift 1.7L Kettle, Breeze Tower Fan, Link Smart Plugs, Pocket Power Bank, Pulse Fit Smartwatch, and ClearView Webcam.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Q4 -->
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span>What is covered under the warranty and what is excluded?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer-panel">
-              <div class="faq-answer-content">
-                <p>Our warranty covers manufacturing and craftsmanship defects in motors, internal circuitry, heating elements, displays, and sensors. It does NOT cover accidental drops, cosmetic dents/scratches, water intrusion exceeding rated IP specifications (e.g. submerging IPX4 earbuds), unauthorized third-party repairs or modifications, commercial usage, or normal lithium-ion battery wear occurring after 12 months.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Q5 -->
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span>What should I do if my Pulse Wireless Earbuds won't pair?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer-panel">
-              <div class="faq-answer-content">
-                <p>Follow these quick reset steps: 1) Place both earbuds back in the charging case and close the lid for 10 seconds. 2) Ensure the case has sufficient charge (the front LED should illuminate). 3) In your phone or computer Bluetooth settings, delete or "Forget" Pulse Earbuds. 4) Open the case lid, remove both earbuds together, wait 5 seconds for them to interlink, and select "Pulse Earbuds" on your phone. If this doesn't fix it, contact support@nexora.example.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Q6 -->
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span>How do I fix the Boom Mini Bluetooth Speaker if it won't charge?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer-panel">
-              <div class="faq-answer-content">
-                <p>1) Make sure you are using the included braided USB-C cable and a functional 5V/2A wall power block. 2) Check the USB-C charging port for any lint, pocket debris, or moisture, and clear it gently with a dry wooden toothpick. 3) Test with an alternate wall outlet. 4) Press and hold the Power button for 10 seconds while plugged into the charger to perform a hardware reset. If this doesn't fix it, contact support@nexora.example.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Q7 -->
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span>Why won't my Crisp Air Fryer turn on?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer-panel">
-              <div class="faq-answer-content">
-                <p>1) Confirm the power plug is fully inserted into a working 120V wall outlet. 2) Ensure the non-stick fry basket is pushed completely flush into the unit until it clicks; the air fryer features a safety micro-switch that prevents power whenever the basket is loose. 3) Test another kitchen outlet to verify your electrical breaker hasn't tripped. If the LED display still will not turn on, contact support@nexora.example.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Q8 -->
-          <div class="faq-item">
-            <button class="faq-question-btn" aria-expanded="false">
-              <span>How can I contact customer support or file a claim?</span>
-              <span class="faq-toggle-icon">+</span>
-            </button>
-            <div class="faq-answer-panel">
-              <div class="faq-answer-content">
-                <p>You can email customer support at <strong>support@nexora.example</strong>. Our customer care team is available Monday through Saturday from 9:00 AM to 6:00 PM EST. For returns or warranty claims, please provide your order number, product name, and a short description or photo/video of the issue for expedited RMA authorization.</p>
-              </div>
-            </div>
+          <div class="wide-phone-visual">
+            <img src="images/banner-smartphones.jpg" alt="White uPhone XI Multicolor" class="wide-phone-img">
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- 10. Newsletter Signup -->
-    <section class="newsletter-strip" aria-label="Newsletter Signup">
-      <div class="container newsletter-inner">
-        <div class="newsletter-text">
-          <h3>Stay Powered with Nexora Updates</h3>
-          <p>Get exclusive early access to product releases, practical smart home tips, and seasonal deals.</p>
-        </div>
-        <form class="newsletter-form" id="newsletterForm" onsubmit="handleNewsletterSubmit(event)">
-          <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Enter your email address" required aria-label="Email address for newsletter">
-          <button type="submit" class="btn-newsletter">Subscribe</button>
-        </form>
       </div>
     </section>
   </main>
 
-  <!-- Site Footer -->
-  <footer class="site-footer">
+  <!-- =========================================================================
+       8. PONNO DARK FOOTER & SERVICES (Screenshot 4)
+       ========================================================================= -->
+  <footer class="ponno-footer-wrapper">
     <div class="container">
-      <div class="footer-top-grid">
-        <!-- Brand & Mission -->
-        <div class="footer-brand-col">
-          <div class="brand-logo">
-            <div class="logo-icon-svg">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
-              </svg>
-            </div>
-            <div class="brand-text-wrap">
-              <span class="brand-name" style="color: #FFFFFF;">Nexora</span>
-              <span class="brand-tagline">Home &amp; Tech</span>
-            </div>
+      <!-- Centered Ponno Logo & Description -->
+      <div class="footer-brand-center" id="about">
+        <div class="ponno-logo-mark">
+          <div class="logo-square-icon" aria-hidden="true">
+            <div class="logo-sq"></div>
+            <div class="logo-sq offset"></div>
           </div>
-          <p>
-            Reliable consumer electronics and modern home appliances engineered for longevity, ease of use, and everyday excellence.
-          </p>
-          <div class="social-links" aria-label="Nexora Social Profiles">
-            <a href="#social-twitter" class="social-link-btn" aria-label="Twitter X" title="Twitter / X">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="#social-instagram" class="social-link-btn" aria-label="Instagram" title="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-            <a href="#social-youtube" class="social-link-btn" aria-label="YouTube" title="YouTube">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-            <a href="#social-linkedin" class="social-link-btn" aria-label="LinkedIn" title="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
+          <span class="ponno-logo-text">Ponno</span>
+        </div>
+        <p class="footer-brand-desc">
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.
+        </p>
+      </div>
+
+      <!-- 3 Feature Strip (Airplane, Support, Shield) -->
+      <div class="footer-features-strip">
+        <div class="footer-feat-item">
+          <div class="feat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.3c.4-.2.6-.6.5-1.1z"></path>
+            </svg>
+          </div>
+          <div class="feat-text-wrap">
+            <h4>Free Shipping</h4>
+            <p>Most product are free shipping.</p>
           </div>
         </div>
 
-        <!-- Categories Column -->
-        <div class="footer-col">
-          <h4>Product Lines</h4>
-          <ul class="footer-nav-list">
-            <li><a href="#catalog" data-filter-nav="audio">Personal Audio &amp; Sound</a></li>
-            <li><a href="#catalog" data-filter-nav="kitchen">Kitchen Countertop Appliances</a></li>
-            <li><a href="#catalog" data-filter-nav="home">Home Care &amp; Cleaners</a></li>
-            <li><a href="#catalog" data-filter-nav="smart">Smart Automation Gadgets</a></li>
-            <li><a href="#catalog" data-filter-nav="sale">Current Sale Deals</a></li>
-          </ul>
+        <div class="footer-feat-item">
+          <div class="feat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+            </svg>
+          </div>
+          <div class="feat-text-wrap">
+            <h4>Customer Support</h4>
+            <p>24x7 Customer Support</p>
+          </div>
         </div>
 
-        <!-- Support Column -->
-        <div class="footer-col">
-          <h4>Customer Care</h4>
-          <ul class="footer-nav-list">
-            <li><a href="#faq">Shipping &amp; Delivery Rates</a></li>
-            <li><a href="#faq">Returns &amp; 30-Day Policy</a></li>
-            <li><a href="#faq">Manufacturer Warranty Claim</a></li>
-            <li><a href="#faq">Device Troubleshooting</a></li>
-            <li><a href="#support">Customer Support Contacts</a></li>
-          </ul>
-        </div>
-
-        <!-- Legal Column -->
-        <div class="footer-col">
-          <h4>Trust &amp; Standards</h4>
-          <ul class="footer-nav-list">
-            <li><a href="#privacy">Privacy Policy</a></li>
-            <li><a href="#terms">Terms of Service</a></li>
-            <li><a href="#warranty-terms">Warranty Terms &amp; Limits</a></li>
-            <li><a href="#recycling">Electronic Waste Recycling</a></li>
-            <li><a href="#security">256-Bit SSL Checkout Security</a></li>
-          </ul>
+        <div class="footer-feat-item">
+          <div class="feat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <div class="feat-text-wrap">
+            <h4>Secure Payment</h4>
+            <p>Most Secure Payment for customer.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <div>
-          <span>&copy; 2026 Nexora Home &amp; Tech. All rights reserved.</span>
+      <!-- 4-Column Navigation Layout -->
+      <div class="footer-4col-grid">
+        <!-- Col 1: Recent Post -->
+        <div class="footer-col" id="recentPosts">
+          <h4>Recent Post</h4>
+          <div class="recent-posts-list">
+            <div class="recent-post-card">
+              <img src="images/promo-laptop.jpg" alt="Blog post thumbnail" class="post-thumb">
+              <div class="post-info">
+                <h5>Temporibus autem quibusdam</h5>
+                <span class="post-date">Sep 02, 2018</span>
+              </div>
+            </div>
+            <div class="recent-post-card">
+              <img src="images/promo-dark-tech.jpg" alt="Blog post thumbnail" class="post-thumb">
+              <div class="post-info">
+                <h5>Temporibus autem quibusdam</h5>
+                <span class="post-date">Sep 02, 2018</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <span class="demo-disclaimer-pill">Interactive Demo Showcase • Chatbot Evaluation Environment</span>
+
+        <!-- Col 2: Quick Link -->
+        <div class="footer-col">
+          <h4>Quick Link</h4>
+          <ul class="footer-links-list">
+            <li><a href="#cart" onclick="openCart(); return false;">Cart</a></li>
+            <li><a href="#checkout" onclick="openCart(); return false;">Checkout</a></li>
+            <li><a href="#tracking">Tracking</a></li>
+            <li><a href="#catalog">Product</a></li>
+            <li><a href="#recentPosts">Blog</a></li>
+          </ul>
         </div>
+
+        <!-- Col 3: Contact Info -->
+        <div class="footer-col" id="contactInfo">
+          <h4>Contact Info</h4>
+          <div class="contact-info-list">
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>lorem address south road<br>77 north, USA - 9991</span>
+            </div>
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>info@mail.com<br>info@mail.com</span>
+            </div>
+            <div class="contact-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>123 456 789<br>123 456 789</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter & Social Icons -->
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p class="footer-newsletter-text">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+          </p>
+          <form class="footer-newsletter-form" onsubmit="handleFooterNewsletter(event)">
+            <input type="email" id="footerNewsletterEmail" class="footer-email-input" placeholder="email@example.com" required aria-label="Email address for newsletter">
+            <button type="submit" class="btn-footer-subscribe" aria-label="Subscribe">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </form>
+
+          <h4>Social Icon</h4>
+          <div class="footer-social-row">
+            <a href="#twitter" class="footer-social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="#vimeo" class="footer-social-link" aria-label="Vimeo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.37-8.29 6.37-1.409 0-2.578-1.294-3.553-3.881L5.322 11.4C4.603 8.816 3.834 7.525 3.01 7.525c-.179 0-.806.378-1.881 1.132L0 7.197c1.185-1.044 2.351-2.084 3.501-3.128C5.127 2.607 6.38 1.83 7.259 1.733c1.727-.183 2.788.995 3.184 3.541.42 2.709.714 4.393.882 5.052.503 2.27 1.05 3.407 1.641 3.407.461 0 1.174-.735 2.139-2.203.966-1.472 1.47-2.593 1.512-3.363.084-1.277-.378-1.916-1.386-1.916-.483 0-1.008.113-1.575.336 1.018-3.333 2.961-4.945 5.83-4.836 2.12.083 3.12 1.455 3.001 4.116z"/></svg>
+            </a>
+            <a href="#pinterest" class="footer-social-link" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="#dribbble" class="footer-social-link" aria-label="Dribbble">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm9.73 10.59c-.43-.03-2.58-.15-5.26.54-.15-.36-.31-.72-.48-1.09-.27-.61-.57-1.22-.89-1.81 3.28-1.39 4.67-2.77 4.8-2.91 1.13 1.45 1.83 3.28 1.83 5.27zm-3.32-6.52c-.17.15-1.52 1.47-4.68 2.78-1.37-2.38-2.88-4.32-3.08-4.57 1.06-.32 2.18-.49 3.35-.49 1.66 0 3.21.35 4.41 2.28zm-9.36-1.58c.2.25 1.69 2.15 3.06 4.51-2.79.82-5.91.87-6.22.87-.04-.41-.06-.82-.06-1.24 0-1.55.51-2.98 1.37-4.14h1.85zm-4.8 6.78c.32 0 3.8-.06 6.85-1 .28.56.55 1.13.8 1.7.17.38.33.76.48 1.13-3.69 1.19-7.23 4.2-7.44 4.38-.41-1.07-.63-2.22-.63-3.43 0-.96.14-1.89.39-2.78h-.45zm2.08 7.35c.21-.18 3.56-3.01 7.23-4.13 1.1 2.91 1.6 5.86 1.7 6.47-.84.34-1.75.54-2.7.54-2.45 0-4.66-1.04-6.23-2.88zm8.79 2.53c-.11-.64-.6-3.48-1.68-6.33 2.45-.66 4.54-.57 4.96-.55.07.57.11 1.15.11 1.74 0 2.05-.75 3.93-1.99 5.37l-1.4-.23z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar (Back to Top on left) -->
+    <div class="footer-bottom-bar">
+      <div class="container footer-bottom-inner">
+        <div>
+          <span>Copyright &copy; 2026 HasThemes | Built with Ponno by HasThemes.</span>
+        </div>
+        <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top" title="Scroll to top">
+          &#9650;
+        </button>
       </div>
     </div>
   </footer>
 
-  <!-- 6. Product Detail Modal -->
-  <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
-    <div class="modal-container">
-      <button class="modal-close-btn" id="closeModalBtn" aria-label="Close product modal">✕</button>
-      <div class="modal-content-grid">
-        <div class="modal-visual-col">
-          <div id="modalIllustrationWrap"></div>
-          <div class="modal-warranty-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F6BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            <span id="modalWarrantyText">1-Year Warranty</span>
-          </div>
+  <!-- =========================================================================
+       MODALS & CART DRAWER
+       ========================================================================= -->
+  <!-- Product Detail Modal (shadcn style) -->
+  <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="modal-close-icon" id="closeModalBtn" aria-label="Close modal">&#10005;</button>
+      <div class="modal-grid-inner">
+        <div class="modal-img-col">
+          <img id="modalImg" src="images/hero-monitor.jpg" alt="Product preview">
         </div>
         <div class="modal-details-col">
-          <span class="modal-product-cat" id="modalProductCat">Category</span>
-          <h2 class="modal-product-name" id="modalProductName">Product Title</h2>
-          <div class="modal-rating-stock">
-            <span class="stars" id="modalStars">★★★★★</span>
-            <span class="stock-status-pill">● In stock</span>
+          <span class="modal-category-tag" id="modalCategory">Category</span>
+          <h2 class="modal-title" id="modalTitle">Product Title</h2>
+          <div class="modal-price-row">
+            <span class="modal-price" id="modalPrice">$0.00</span>
+            <span class="modal-original" id="modalOriginal"></span>
           </div>
-          <div class="modal-price-box">
-            <span class="modal-current-price" id="modalPrice">$0</span>
-            <span class="modal-original-price" id="modalOriginalPrice"></span>
-          </div>
-          <p class="modal-short-desc" id="modalDesc">Product description here.</p>
-          
-          <h4 class="modal-subheading">Technical Specifications</h4>
-          <table class="specs-table" id="modalSpecsTable"></table>
+          <p class="modal-desc" id="modalDesc">Description here...</p>
 
-          <h4 class="modal-subheading">What's in the Box</h4>
-          <ul class="in-the-box-list" id="modalInTheBoxList"></ul>
+          <table class="modal-specs-table" id="modalSpecs"></table>
 
-          <div class="best-suited-box" id="modalBestSuited">
-            <strong>Best Suited For:</strong> <span>...</span>
-          </div>
-
-          <div class="modal-cart-actions">
-            <div class="qty-control" aria-label="Select quantity">
-              <button class="qty-btn" id="modalQtyMinus" aria-label="Decrease quantity">-</button>
-              <span class="qty-display" id="modalQtyDisplay">1</span>
-              <button class="qty-btn" id="modalQtyPlus" aria-label="Increase quantity">+</button>
-            </div>
-            <button class="btn-modal-add-cart" id="modalAddToCartBtn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <div class="modal-action-bar">
+            <button class="btn-modal-add" id="modalAddCartBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
               <span>Add to Cart</span>
             </button>
           </div>
@@ -633,73 +662,29 @@
     </div>
   </div>
 
-  <!-- 7. Working Fake Cart Drawer -->
-  <div class="cart-drawer-overlay" id="cartOverlay"></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
-    <div class="cart-drawer-header">
-      <div class="cart-drawer-title-wrap">
-        <h3 class="cart-drawer-title">Your Cart</h3>
-        <span class="cart-drawer-count" id="cartItemsCountText">(0 items)</span>
-      </div>
-      <button class="cart-drawer-close" id="closeCartBtn" aria-label="Close cart drawer">✕</button>
+  <!-- Cart Drawer Panel -->
+  <div class="cart-drawer-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer-panel" id="cartDrawer" aria-label="Cart drawer">
+    <div class="cart-panel-header">
+      <h3 class="cart-panel-title">Shopping Cart</h3>
+      <button class="cart-panel-close" id="closeCartBtn" aria-label="Close cart">&#10005;</button>
     </div>
-
-    <!-- Free Delivery Progress Bar -->
-    <div class="free-delivery-box">
-      <div class="free-delivery-text" id="freeDeliveryStatus">
-        <span>Add $75.00 for Free Delivery</span>
-      </div>
-      <div class="progress-track">
-        <div class="progress-fill" id="freeDeliveryProgress"></div>
-      </div>
+    <div class="cart-panel-items" id="cartPanelItems">
+      <!-- Injected dynamically -->
     </div>
-
-    <!-- Cart Item List -->
-    <div class="cart-items-list" id="cartItemsList">
-      <!-- Populated via js/app.js -->
-    </div>
-
-    <!-- Cart Drawer Footer -->
-    <div class="cart-drawer-footer">
-      <div class="cart-summary-row">
+    <div class="cart-panel-footer">
+      <div class="cart-subtotal-row">
         <span>Subtotal</span>
-        <span id="cartSubtotalText">$0.00</span>
+        <span id="cartSubtotalVal">$0.00</span>
       </div>
-      <div class="cart-summary-row">
-        <span>Standard Shipping</span>
-        <span id="cartShippingText">$5.99</span>
-      </div>
-      <div class="cart-summary-row total-row">
-        <span>Estimated Total</span>
-        <span id="cartTotalText">$0.00</span>
-      </div>
-      <button class="btn-checkout" id="checkoutBtn">
-        <span>Proceed to Checkout</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      <button class="btn-checkout-panel" onclick="showToast('Demo Checkout: Real payments disabled.', 'blue')">
+        Proceed to Checkout
       </button>
     </div>
   </aside>
 
-  <!-- Friendly Demo Checkout Notice Modal -->
-  <div class="demo-checkout-modal" id="demoCheckoutModal" role="dialog" aria-modal="true">
-    <div class="demo-checkout-dialog">
-      <div class="demo-checkout-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-        </svg>
-      </div>
-      <h3 class="demo-checkout-title">Demo Storefront Notice</h3>
-      <p class="demo-checkout-desc">
-        Thank you for testing Nexora Home &amp; Tech! This is an interactive demo store configured as a showcase for the AI customer support assistant. Real payment processing is disabled.
-      </p>
-      <button class="btn-demo-modal-ok" id="closeDemoNoticeBtn">Got it, thanks!</button>
-    </div>
-  </div>
-
-  <!-- Toast Notification Container (Placed at top right to keep bottom-right clear for chatbot widget!) -->
-  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+  <!-- Top-Right Toast Stack -->
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
 
   <!-- Scripts -->
   <script src="js/products.js"></script>
@@ -707,17 +692,14 @@
 
   <!-- =========================================================================
        CHATBOT WIDGET INTEGRATION
-       Keep bottom-right clear so the widget bubble floats unimpeded.
-       Replace REPLACE_WITH_BACKEND_URL with your actual chatbot backend URL.
-       Note: data-title, data-greeting, and data-color take effect if the
-       widget script version supports them.
+       Corner remains clear so the launcher bubble floats unimpeded.
        ========================================================================= -->
   <script src="REPLACE_WITH_BACKEND_URL/widget/widget.js"
           data-api-url="REPLACE_WITH_BACKEND_URL"
           data-client-id="electronics-demo"
           data-title="Nexora Support Assistant"
           data-greeting="Hi! I can help with product questions, shipping, returns, and warranty. How can I help?"
-          data-color="#2F6BFF"
+          data-color="#1852E0"
           defer></script>
 
 </body>
