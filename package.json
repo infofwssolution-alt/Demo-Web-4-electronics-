@@ -1,0 +1,16 @@
+{
+  "name": "nexora-home-tech-demo",
+  "version": "1.0.0",
+  "description": "Nexora Home & Tech - E-commerce demo showcase for AI chatbot widget",
+  "scripts": {
+    "start": "npx serve -l 5501 ."
+  },
+  "keywords": [
+    "demo",
+    "ecommerce",
+    "chatbot-showcase"
+  ],
+  "author": "Nexora Demo",
+  "license": "UNLICENSED",
+  "private": true
+}
