@@ -3,17 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ponno - Modern Electronics &amp; High-Tech Store</title>
-  <meta name="description" content="Discover premium electronics, curved displays, studio audio, smart home devices, and ultra laptops at Ponno.">
+  <title>Ponno - High-Tech Electronics &amp; Next-Gen Audio</title>
+  <meta name="description" content="Discover ultra-wide curved displays, studio-grade wireless audio, smart home hubs, and high-performance laptops at Ponno.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
   <!-- =========================================================================
-       1. TOP ROYAL BLUE NAVIGATION BAR (Screenshot 1)
+       1. TOP ROYAL BLUE NAVBAR (Screenshot 1)
        ========================================================================= -->
   <header class="top-nav-bar" id="topNav">
     <div class="container top-nav-inner">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-mini-badge" aria-label="Ponno Home">
+        <div class="brand-sq-icon" aria-hidden="true">
+          <div class="sq"></div>
+          <div class="sq offset"></div>
+        </div>
+        <span>Ponno</span>
+      </a>
+
+      <!-- Main Nav Links -->
       <nav class="nav-links-wrap" aria-label="Main Navigation">
         <a href="#hero" class="nav-item">
           <span>Home</span>
@@ -39,8 +49,13 @@
         </a>
       </nav>
 
-      <!-- Nav Actions (Settings Gear & Cart) -->
+      <!-- Nav Actions (Search Pill, Settings Gear & Cart) -->
       <div class="nav-actions-wrap">
+        <div class="nav-search-pill" title="Live Search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="liveSearchInput" placeholder="Search gear..." aria-label="Live Search">
+        </div>
+
         <button class="nav-icon-btn" id="openSettingsBtn" aria-label="Settings" title="Settings">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="3"></circle>
@@ -62,31 +77,53 @@
 
   <main>
     <!-- =========================================================================
-         2. HERO SLIDER SECTION (Screenshot 1: Mount Carved 2200XD)
+         2. HERO SLIDER SECTION (Alive with Floating Spec Badges & Ambient Glow)
          ========================================================================= -->
     <section class="hero-slider-section" id="hero">
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
+
       <div class="hero-bg-shapes" aria-hidden="true">
         <div class="hero-shape-left"></div>
-        <div class="hero-shape-center"></div>
         <div class="hero-shape-right"></div>
       </div>
 
       <div class="container hero-grid">
-        <!-- Left: Ultra-Wide Curved Monitor -->
+        <!-- Left: Ultra-Wide Curved Monitor with Floating Specs -->
         <div class="hero-visual-col">
+          <div class="hero-floating-badge badge-top-left">
+            <span class="badge-dot-live"></span>
+            <span>34" WQHD 1500R Curved</span>
+          </div>
+
           <img src="images/hero-monitor.jpg" alt="Mount Carved 2200XD Curved Gaming Monitor" class="hero-monitor-img" onclick="openProductModal('prod-monitor-01')">
+
+          <div class="hero-floating-badge badge-bottom-right">
+            <span class="badge-dot-live"></span>
+            <span>165Hz Fast IPS • HDR400</span>
+          </div>
         </div>
 
         <!-- Right: Best Products Details -->
         <div class="hero-content-col">
+          <div class="hero-release-pill">
+            <span class="pulse-indicator"></span>
+            <span>New Flagship Release</span>
+          </div>
           <span class="hero-eyebrow">Best Products</span>
           <h1 class="hero-product-title">Mount Carved 2200XD</h1>
           <p class="hero-description">
             Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
           </p>
-          <button class="btn-hero-primary" onclick="openProductModal('prod-monitor-01')">
-            Shop Now
-          </button>
+          <div class="hero-cta-group">
+            <button class="btn-hero-primary" onclick="openProductModal('prod-monitor-01')">
+              <span>Shop Now</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+            <button class="btn-hero-secondary" onclick="openProductModal('prod-monitor-01')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              <span>Explore Specs</span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -98,20 +135,20 @@
     </section>
 
     <!-- =========================================================================
-         3. SECOND ROW: HOT DEAL & SIDE PRODUCT (Screenshot 1)
+         3. SECOND ROW: HOT DEAL & SPOTLIGHT BENTO (Screenshot 1)
          ========================================================================= -->
     <section class="hot-deal-section">
       <div class="container hot-deal-grid">
         <!-- Left Card: Kemioo DX24 Headphone with Live Countdown -->
         <div class="hot-deal-card">
           <div class="hot-deal-info">
-            <span class="hot-deal-tag">HOT DEAL</span>
+            <span class="hot-deal-tag">HOT DEAL • 84% CLAIMED</span>
             <h2 class="hot-deal-title">Kemioo DX24 Headphone</h2>
             <p class="hot-deal-desc">
               Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.
             </p>
 
-            <!-- Live Countdown Timer -->
+            <!-- Live Countdown Timer in Glass Bento Blocks -->
             <div class="countdown-strip" id="hotDealCountdown" aria-label="Limited time deal countdown">
               <div class="countdown-block">
                 <span class="countdown-val" id="cdDays">1723</span>
@@ -155,7 +192,7 @@
     </section>
 
     <!-- =========================================================================
-         4. PRODUCT FILTER TABS & 4-COLUMN GRID (Screenshot 2)
+         4. PRODUCT FILTER TABS & 4-COLUMN SHADCN GRID (Screenshot 2)
          ========================================================================= -->
     <section class="catalog-section" id="catalog">
       <div class="container">
@@ -282,7 +319,7 @@
           <div class="promo-banner-content">
             <span class="promo-subtitle">New Collection</span>
             <h2 class="promo-title">Lorem Top LT500</h2>
-            <a href="#catalog" class="promo-shop-link">SHOP NOW</a>
+            <a href="#catalog" class="promo-shop-link">SHOP NOW &rarr;</a>
           </div>
         </div>
 
@@ -293,14 +330,14 @@
           <div class="promo-banner-content">
             <span class="promo-subtitle">Best Deal</span>
             <h2 class="promo-title">Ipsum Nok IT222</h2>
-            <a href="#catalog" class="promo-shop-link">SHOP NOW</a>
+            <a href="#catalog" class="promo-shop-link">SHOP NOW &rarr;</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================================
-         6. LAPTOPS & COMPUTERS 3x3 COMPACT SECTION (Screenshot 3)
+         6. LAPTOPS & COMPUTERS 3x3 COMPACT BENTO (Screenshot 3)
          ========================================================================= -->
     <section class="compact-catalog-section" id="compactCatalog">
       <div class="container">
@@ -450,7 +487,7 @@
     </section>
 
     <!-- =========================================================================
-         7. WIDE SMARTPHONE BANNER (Screenshot 3: White uPhone XI)
+         7. WIDE SMARTPHONE BANNER (Screenshot 3: Dynamic Cyan Flow)
          ========================================================================= -->
     <section class="wide-phone-banner-section">
       <div class="container">
@@ -460,7 +497,7 @@
             <p class="wide-phone-desc">
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             </p>
-            <a href="#catalog" class="btn-phone-shop">Shop Now</a>
+            <a href="#catalog" class="btn-phone-shop">Shop Now &rarr;</a>
           </div>
           <div class="wide-phone-visual">
             <img src="images/banner-smartphones.jpg" alt="White uPhone XI Multicolor" class="wide-phone-img">
@@ -471,8 +508,8 @@
   </main>
 
   <!-- =========================================================================
-       8. PONNO DARK FOOTER & SERVICES (Screenshot 4)
-       ========================================================================= -->
+         8. PONNO DARK FOOTER & SERVICES (Screenshot 4)
+         ========================================================================= -->
   <footer class="ponno-footer-wrapper">
     <div class="container">
       <!-- Centered Ponno Logo & Description -->
@@ -536,14 +573,14 @@
         <div class="footer-col" id="recentPosts">
           <h4>Recent Post</h4>
           <div class="recent-posts-list">
-            <div class="recent-post-card">
+            <div class="recent-post-card" onclick="openProductModal('prod-laptop-01')">
               <img src="images/promo-laptop.jpg" alt="Blog post thumbnail" class="post-thumb">
               <div class="post-info">
                 <h5>Temporibus autem quibusdam</h5>
                 <span class="post-date">Sep 02, 2018</span>
               </div>
             </div>
-            <div class="recent-post-card">
+            <div class="recent-post-card" onclick="openProductModal('prod-monitor-01')">
               <img src="images/promo-dark-tech.jpg" alt="Blog post thumbnail" class="post-thumb">
               <div class="post-info">
                 <h5>Temporibus autem quibusdam</h5>
@@ -630,6 +667,18 @@
   </footer>
 
   <!-- =========================================================================
+       FLOATING "ALIVE" SOCIAL PROOF (Bottom-Left)
+       Keeps bottom-right completely clear for AI chatbot launcher!
+       ========================================================================= -->
+  <div class="live-activity-toast" id="liveActivityToast">
+    <img src="images/deal-headphones.jpg" id="liveActivityImg" alt="Purchased item" class="live-activity-thumb">
+    <div class="live-activity-info">
+      <h6 id="liveActivityTitle">Someone in Austin, TX purchased Kemioo DX24</h6>
+      <p id="liveActivityTime">Just now • Verified Buyer</p>
+    </div>
+  </div>
+
+  <!-- =========================================================================
        MODALS & CART DRAWER
        ========================================================================= -->
   <!-- Product Detail Modal (shadcn style) -->
@@ -669,9 +718,22 @@
       <h3 class="cart-panel-title">Shopping Cart</h3>
       <button class="cart-panel-close" id="closeCartBtn" aria-label="Close cart">&#10005;</button>
     </div>
+
+    <!-- Free Delivery Progress Bar -->
+    <div class="cart-free-shipping-bar">
+      <div class="cart-free-shipping-text">
+        <span id="cartFreeShippingLabel">Free Delivery Threshold: $75</span>
+        <span id="cartFreeShippingRemaining">$75.00 to go</span>
+      </div>
+      <div class="cart-progress-track">
+        <div class="cart-progress-fill" id="cartProgressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
     <div class="cart-panel-items" id="cartPanelItems">
       <!-- Injected dynamically -->
     </div>
+
     <div class="cart-panel-footer">
       <div class="cart-subtotal-row">
         <span>Subtotal</span>

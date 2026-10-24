@@ -1,6 +1,7 @@
 /**
- * Ponno / Nexora - Application Logic
- * Interactive tabs, live countdown timers, wishlist toggle, modal & cart drawer.
+ * Ponno / Nexora - Alive & Premium Application Logic
+ * Interactive tabs, live countdown timers, wishlist toggle, modal, cart drawer,
+ * live purchasing activity ticker, and free shipping progress meter.
  */
 
 // Application State
@@ -10,8 +11,19 @@ const appState = {
   activeCompactTab: "featured",
   modalProduct: null,
   hotDealSeconds: 1723 * 86400 + 8 * 3600 + 59 * 60 + 50,
-  tileTimerSeconds: 14 * 86400 + 12 * 3600 + 30 * 60 + 45
+  tileTimerSeconds: 14 * 86400 + 12 * 3600 + 30 * 60 + 45,
+  activityIndex: 0
 };
+
+// Recent Purchase Activities for the "Alive" ticker
+const LIVE_ACTIVITIES = [
+  { item: "Kemioo DX24 Headphone", city: "Austin, TX", time: "Just now", img: "images/deal-headphones.jpg" },
+  { item: "Mount Carved 2200XD", city: "San Francisco, CA", time: "2m ago", img: "images/hero-monitor.jpg" },
+  { item: "Pulse Outdoor Speaker", city: "Seattle, WA", time: "4m ago", img: "images/prod-speaker-purple.jpg" },
+  { item: "Smart 4K Streaming Box", city: "Chicago, IL", time: "7m ago", img: "images/prod-stream-box.jpg" },
+  { item: "Fhasellus Viverra Urna Mic", city: "New York, NY", time: "9m ago", img: "images/prod-studio-mic.jpg" },
+  { item: "VR Headset Travel Kit", city: "Miami, FL", time: "11m ago", img: "images/prod-vr-case.jpg" }
+];
 
 // DOM References
 const dom = {
@@ -23,6 +35,11 @@ const dom = {
   cartCountBadge: document.getElementById("cartCountBadge"),
   cartPanelItems: document.getElementById("cartPanelItems"),
   cartSubtotalVal: document.getElementById("cartSubtotalVal"),
+  cartFreeShippingRemaining: document.getElementById("cartFreeShippingRemaining"),
+  cartProgressFill: document.getElementById("cartProgressFill"),
+
+  // Search
+  liveSearchInput: document.getElementById("liveSearchInput"),
 
   // 4-Column Grid
   products4ColGrid: document.getElementById("products4ColGrid"),
@@ -58,7 +75,13 @@ const dom = {
   p3Mins: document.getElementById("p3Mins"),
   p3Secs: document.getElementById("p3Secs"),
 
-  // Back to Top & Toast
+  // Floating Live Activity (Bottom-Left)
+  liveActivityToast: document.getElementById("liveActivityToast"),
+  liveActivityImg: document.getElementById("liveActivityImg"),
+  liveActivityTitle: document.getElementById("liveActivityTitle"),
+  liveActivityTime: document.getElementById("liveActivityTime"),
+
+  // Back to Top & Toast Stack
   backToTopBtn: document.getElementById("backToTopBtn"),
   toastStack: document.getElementById("toastStack")
 };
@@ -67,6 +90,7 @@ const dom = {
 document.addEventListener("DOMContentLoaded", () => {
   initCart();
   startCountdownTimers();
+  startLiveActivityTicker();
   bindEvents();
 });
 
@@ -142,6 +166,22 @@ function updateCartUI() {
     dom.cartSubtotalVal.textContent = `$${subtotal.toFixed(2)}`;
   }
 
+  // Free delivery threshold ($75)
+  const freeThreshold = 75;
+  if (dom.cartFreeShippingRemaining && dom.cartProgressFill) {
+    if (subtotal >= freeThreshold) {
+      dom.cartFreeShippingRemaining.textContent = "🎉 Unlocked Free Delivery!";
+      dom.cartProgressFill.style.width = "100%";
+      dom.cartProgressFill.style.background = "#10B981";
+    } else {
+      const remaining = (freeThreshold - subtotal).toFixed(2);
+      const pct = Math.min(100, Math.round((subtotal / freeThreshold) * 100));
+      dom.cartFreeShippingRemaining.textContent = `$${remaining} to go`;
+      dom.cartProgressFill.style.width = `${pct}%`;
+      dom.cartProgressFill.style.background = "linear-gradient(90deg, #1852E0 0%, #10B981 100%)";
+    }
+  }
+
   if (dom.cartPanelItems) {
     if (appState.cart.length === 0) {
       dom.cartPanelItems.innerHTML = `
@@ -159,12 +199,12 @@ function updateCartUI() {
             <h4>${item.name}</h4>
             <span class="cart-item-price">$${item.price.toFixed(2)}</span>
             <div class="cart-qty-ctrl">
-              <button class="cart-qty-btn" onclick="updateCartQty('${item.id}', -1)">-</button>
+              <button class="cart-qty-btn" onclick="updateCartQty('${item.id}', -1)" aria-label="Decrease quantity">-</button>
               <span style="font-size: 0.8rem; font-weight: 700; min-width: 16px; text-align: center;">${item.quantity}</span>
-              <button class="cart-qty-btn" onclick="updateCartQty('${item.id}', 1)">+</button>
+              <button class="cart-qty-btn" onclick="updateCartQty('${item.id}', 1)" aria-label="Increase quantity">+</button>
             </div>
           </div>
-          <button class="cart-item-remove" onclick="removeCartItem('${item.id}')" title="Remove">&times;</button>
+          <button class="cart-item-remove" onclick="removeCartItem('${item.id}')" title="Remove" aria-label="Remove item">&times;</button>
         </div>
       `).join("");
     }
@@ -271,11 +311,40 @@ function startCountdownTimers() {
   }, 1000);
 }
 
+// --- FLOATING "ALIVE" SOCIAL PROOF TICKER (Bottom-Left) ---
+function startLiveActivityTicker() {
+  if (!dom.liveActivityToast) return;
+
+  function showNextActivity() {
+    const act = LIVE_ACTIVITIES[appState.activityIndex];
+    dom.liveActivityImg.src = act.img;
+    dom.liveActivityTitle.textContent = `Someone in ${act.city} purchased ${act.item}`;
+    dom.liveActivityTime.textContent = `${act.time} • Verified Buyer`;
+
+    dom.liveActivityToast.classList.add("visible");
+
+    // Hide after 4.5 seconds
+    setTimeout(() => {
+      dom.liveActivityToast.classList.remove("visible");
+    }, 4500);
+
+    appState.activityIndex = (appState.activityIndex + 1) % LIVE_ACTIVITIES.length;
+  }
+
+  // Initial delay 4s, recurring every 14s
+  setTimeout(() => {
+    showNextActivity();
+    setInterval(showNextActivity, 14000);
+  }, 4000);
+}
+
 // --- WISHLIST TOGGLE ---
 function toggleWishlist(btn) {
   btn.classList.toggle("active");
   if (btn.classList.contains("active")) {
     btn.style.color = "#EF4444";
+    btn.style.transform = "scale(1.2)";
+    setTimeout(() => { btn.style.transform = "scale(1)"; }, 200);
     showToast("Added item to your Wishlist!", "blue");
   } else {
     btn.style.color = "#9CA3AF";
@@ -289,6 +358,29 @@ function bindEvents() {
   if (dom.openCartBtn) dom.openCartBtn.addEventListener("click", openCart);
   if (dom.closeCartBtn) dom.closeCartBtn.addEventListener("click", closeCart);
   if (dom.cartBackdrop) dom.cartBackdrop.addEventListener("click", closeCart);
+
+  // Live Search in Top Nav
+  if (dom.liveSearchInput) {
+    dom.liveSearchInput.addEventListener("input", (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      if (!q) return;
+
+      const matched = PRODUCTS.find((p) => p.name.toLowerCase().includes(q) || p.categoryName.toLowerCase().includes(q));
+      if (matched) {
+        showToast(`Found: ${matched.name} ($${matched.price})`, "blue");
+      }
+    });
+
+    dom.liveSearchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const q = dom.liveSearchInput.value.toLowerCase().trim();
+        const matched = PRODUCTS.find((p) => p.name.toLowerCase().includes(q) || p.categoryName.toLowerCase().includes(q));
+        if (matched) {
+          openProductModal(matched.id);
+        }
+      }
+    });
+  }
 
   // Modal
   if (dom.closeModalBtn) dom.closeModalBtn.addEventListener("click", closeProductModal);
@@ -343,8 +435,8 @@ function render4ColGrid(tag) {
     filtered = filtered.slice(0, 4);
   }
 
-  dom.products4ColGrid.style.opacity = "0.5";
-  dom.products4ColGrid.style.transform = "translateY(6px)";
+  dom.products4ColGrid.style.opacity = "0.4";
+  dom.products4ColGrid.style.transform = "translateY(8px)";
   dom.products4ColGrid.style.transition = "all 0.25s ease";
 
   setTimeout(() => {
@@ -387,7 +479,7 @@ function render4ColGrid(tag) {
 
     dom.products4ColGrid.style.opacity = "1";
     dom.products4ColGrid.style.transform = "translateY(0)";
-  }, 200);
+  }, 220);
 }
 
 // Toast System (Top-right positioned to keep bottom-right clear for chatbot widget!)
@@ -399,7 +491,7 @@ function showToast(message, type = "blue") {
 
   setTimeout(() => {
     toast.style.opacity = "0";
-    toast.style.transform = "translateX(20px)";
+    toast.style.transform = "translateX(25px)";
     toast.style.transition = "all 0.25s ease";
     setTimeout(() => toast.remove(), 250);
   }, 3000);
