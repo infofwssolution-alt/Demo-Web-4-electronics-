@@ -1,0 +1,50 @@
+[
+  {
+    "timestamp": "2026-10-29T18:27:59.539Z",
+    "method": "POST",
+    "url": "http://localhost:3000/chat",
+    "status": 200,
+    "ok": true,
+    "requestBody": "{\"message\":\"I need something to make smoothies in a small kitchen, under $70.\",\"session_id\":\"sess_eyjtgjujybc_mvtvlr98\",\"client_id\":\"electronics-demo\"}"
+  },
+  {
+    "timestamp": "2026-10-29T18:28:14.938Z",
+    "method": "POST",
+    "url": "http://localhost:3000/chat",
+    "status": 200,
+    "ok": true,
+    "requestBody": "{\"message\":\"What's your return policy if I've already opened the product?\",\"session_id\":\"sess_eyjtgjujybc_mvtvlr98\",\"client_id\":\"electronics-demo\"}"
+  },
+  {
+    "timestamp": "2026-10-29T18:28:29.411Z",
+    "method": "POST",
+    "url": "http://localhost:3000/chat",
+    "status": 200,
+    "ok": true,
+    "requestBody": "{\"message\":\"My earbuds won't pair with my phone. What should I try?\",\"session_id\":\"sess_eyjtgjujybc_mvtvlr98\",\"client_id\":\"electronics-demo\"}"
+  },
+  {
+    "timestamp": "2026-10-29T18:28:43.819Z",
+    "method": "POST",
+    "url": "http://localhost:3000/chat",
+    "status": 200,
+    "ok": true,
+    "requestBody": "{\"message\":\"What does the warranty on the air fryer cover?\",\"session_id\":\"sess_eyjtgjujybc_mvtvlr98\",\"client_id\":\"electronics-demo\"}"
+  },
+  {
+    "timestamp": "2026-10-29T18:28:56.081Z",
+    "method": "POST",
+    "url": "http://localhost:3000/chat",
+    "status": 200,
+    "ok": true,
+    "requestBody": "{\"message\":\"Where is my order #48213?\",\"session_id\":\"sess_eyjtgjujybc_mvtvlr98\",\"client_id\":\"electronics-demo\"}"
+  },
+  {
+    "timestamp": "2026-10-29T18:29:15.306Z",
+    "method": "POST",
+    "url": "http://localhost:3000/chat",
+    "status": 200,
+    "ok": true,
+    "requestBody": "{\"message\":\"What's a good gift under $50?\",\"session_id\":\"sess_ficmxnyfk59_mvtvnfg2\",\"client_id\":\"electronics-demo\"}"
+  }
+]

@@ -1,43 +1,83 @@
 # Nexora Home & Tech - E-Commerce Demo Storefront
 
-A modern e-commerce storefront for **Nexora Home & Tech** (fictional consumer electronics & appliances). Built specifically as a showcase environment for an embeddable AI customer support chatbot widget.
+A modern, high-performance e-commerce storefront for **Nexora Home & Tech** (fictional consumer electronics & appliances). Built as an authentic, interactive showcase environment for the embeddable AI customer support chatbot widget.
 
 ---
 
-## Quick Start (Port 5501)
+## Complete Local Setup & Run Guide
 
-The chatbot backend requires origin matching for CORS and security. This site is preconfigured to serve on **`http://localhost:5501`**.
+Everything runs 100% locally on localhost across two independent services:
+- **Chatbot Backend**: `http://localhost:3000` (Node.js / Express / Groq / MongoDB / RAG)
+- **Demo Storefront**: `http://localhost:5501` (Vanilla HTML5 / CSS3 / JavaScript)
 
-### Option 1: Via npm (Recommended)
+---
+
+### Step 1: Start the Chatbot Backend
+In a terminal, navigate to the chatbot backend directory and start the server:
+
 ```bash
-# Navigate to the folder
-cd "c:\FWS\Demo Web $ (electrnoics)"
-
-# Start static server on port 5501
+cd "c:\FWS\chatbot"
 npm start
 ```
-*(Runs `npx serve -l 5501 .` under the hood).*
 
-### Option 2: Via Python 3
+Verify the backend is healthy by visiting or pinging:
+👉 **`http://localhost:3000/health`**  
+*(Expected response: `{"status":"ok","mongodb":"connected",...}`)*
+
+Ensure `ALLOWED_ORIGINS` in `c:\FWS\chatbot\.env` includes `http://localhost:5501`:
+```env
+ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5500,http://localhost:5501
+```
+
+---
+
+### Step 2: Seed the Knowledge Base
+The knowledge base for this demo is located at `knowledge/electronics-demo.md` (and synchronized with `c:\FWS\chatbot\knowledge\electronics-demo.md`).
+
+To seed or refresh the vector embeddings for client `electronics-demo`:
+
 ```bash
-# From inside the folder
+cd "c:\FWS\chatbot"
+npm run seed -- --client=electronics-demo --clear
+```
+
+This ingests all 34 topic blocks (specs for 14 products, shipping rules, return policy, warranties, troubleshooting trees, and support contacts).
+
+---
+
+### Step 3: Start the Nexora Storefront (Port 5501)
+In a second terminal, start the static server in this folder:
+
+```bash
+cd "c:\FWS\Demo Web $ (electrnoics)"
+npm start
+```
+*(Runs `npx serve -l 5501 .` on the required fixed port `5501`)*
+
+Alternative via Python:
+```bash
 python -m http.server 5501
 ```
 
-Once running, open your browser to:
+---
+
+### Step 4: Open and Test
+Open your browser to:
 👉 **`http://localhost:5501`**
+
+1. The floating electric-blue chat bubble appears in the bottom-right corner.
+2. Click the bubble to open the **Nexora Support Assistant**.
+3. Try asking product questions, requesting recommendations under a budget, asking return rules, or troubleshooting earbuds.
 
 ---
 
-## Connecting the AI Chatbot Widget
-
-### 1. Configure the Frontend Embed
-Open `index.html` and look for the `<script>` tag near the bottom of `<body>`:
+## AI Chatbot Widget Configuration
+The embed tag in `index.html` is configured as follows:
 
 ```html
 <!-- Nexora AI Support Chatbot Widget Embed -->
-<script src="REPLACE_WITH_BACKEND_URL/widget/widget.js"
-        data-api-url="REPLACE_WITH_BACKEND_URL"
+<script src="http://localhost:3000/widget/widget.js"
+        data-api-url="http://localhost:3000"
         data-client-id="electronics-demo"
         data-title="Nexora Support Assistant"
         data-greeting="Hi! I can help with product questions, shipping, returns, and warranty. How can I help?"
@@ -45,49 +85,21 @@ Open `index.html` and look for the `<script>` tag near the bottom of `<body>`:
         defer></script>
 ```
 
-Replace both occurrences of `REPLACE_WITH_BACKEND_URL` with your actual backend URL (for example, `http://localhost:8000` or your deployed backend address).
-
-> **Note on Custom Attributes**: The `data-title`, `data-greeting`, and `data-color` attributes provide default styling hints. They will only take effect if your widget script version supports custom attribute overrides; otherwise, the widget will use its backend defaults.
-
-### 2. Add `http://localhost:5501` to Backend `ALLOWED_ORIGINS`
-Your backend's environment variables must allow requests from origin `http://localhost:5501`.
-
-In your backend `.env` file or environment settings, update `ALLOWED_ORIGINS`:
-```env
-# Example with multiple demo origins comma-separated:
-ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173,http://localhost:5500,http://localhost:5501
-```
-Restart your chatbot backend service after modifying `.env`.
-
-### 3. Ingest the Knowledge Base into the Chatbot
-This demo repository includes a pre-chunked knowledge base containing specs for all 14 products, shipping and warranty policies, return rules, troubleshooting trees, and support contacts:
-- File location: `knowledge/electronics-demo.md`
-
-#### Steps to seed:
-1. Copy `knowledge/electronics-demo.md` into your chatbot repository's knowledge or seed directory (e.g., `chatbot/data/electronics-demo.md`).
-2. Run your repository's ingestion or ingest script specifying the client ID `electronics-demo`:
-   ```bash
-   # Example ingestion command in your chatbot backend:
-   python ingest.py --client-id electronics-demo --file knowledge/electronics-demo.md
-   ```
-3. The chatbot is now ready to answer queries for client `electronics-demo`.
-
 ---
 
-## Screen Recording & Demo
-
-See **`DEMO_SCRIPT.md`** for a complete 90-second video demo walkthrough, including 6 realistic test questions covering:
-1. Product recommendation (kitchen blender under $70)
-2. Comparison (earbuds vs. over-ear headphones for travel)
-3. Return policy (opened appliance restocking fee)
-4. Warranty & claims (2-year appliance coverage)
-5. Troubleshooting (earbuds pairing reset)
-6. Out-of-scope fallback (live order status & installments handoff)
+## Demo & Testing Checklist
+See **`DEMO_SCRIPT.md`** for a complete 90-second video demo walkthrough, including the verified test questions:
+1. **Product Recommendation**: *"I need something to make smoothies in a small kitchen, under $70."* → Recommends **Whirl 1.5L Blender ($64)** with 700W motor & compact dimensions.
+2. **Comparison**: *"Should I get the earbuds or the over-ear headphones for travel?"* → Compares **Studio Over-Ear Headphones ($89)** vs. **Pulse Earbuds ($59)**.
+3. **Return Policy**: *"What's your return policy if I've already opened the product?"* → Cites 14-day window for opened items, 15% restocking fee, and hygiene exceptions.
+4. **Warranty Coverage**: *"What does the warranty on the air fryer cover?"* → Explains the 2-year warranty covering electrical and heating defects.
+5. **Troubleshooting**: *"My earbuds won't pair with my phone. What should I try?"* → Lists 5-step reset and pairing sequence.
+6. **Graceful Out-of-Scope Fallback**: *"Where is my order #48213?"* → Acknowledges inability to access live order records and provides support contact without inventing data.
 
 ---
 
 ## Design & Architecture Notes
-- **Zero External Dependencies**: Pure vanilla HTML5, CSS3, and JavaScript. All device graphics are rendered via custom inline SVG illustrations for zero latency, zero CDN reliance, and total offline stability.
-- **Fixed Port 5501**: Required for CORS policy validation against the chatbot API.
-- **Widget Clearance**: The bottom-right corner is reserved exclusively for the chatbot floating launcher bubble. The cart drawer, modals, and toast messages are positioned to avoid obscuring the widget.
-- **Full Interactivity**: Live category filters, instant keyword search, product detail modal with complete specs tables, working shopping cart drawer with free-shipping threshold calculator ($75), and expandable FAQ accordions.
+- **Zero External Dependencies**: Pure vanilla HTML5, CSS3, and JavaScript. All device illustrations are rendered via clean inline SVGs for zero latency and instant offline stability.
+- **Fixed Port 5501**: Matches CORS origin whitelist in the backend.
+- **Clear Widget Clearance**: All UI elements (cart drawer, product modals, search dropdowns, back-to-top button) respect the launcher zone and stay usable at 390px mobile viewport.
+- **Full Interactivity**: Category filters, real-time keyword search, specs modal, shopping cart drawer with a live $75 free-delivery progress calculator, and interactive FAQ accordions.
